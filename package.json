@@ -1,0 +1,22 @@
+{
+  "name": "wheel",
+  "version": "1.0.0",
+  "description": "以研究轮子并实现为来衡量学习效果",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangdeyu/wheel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangdeyu/wheel/issues"
+  },
+  "homepage": "https://github.com/zhangdeyu/wheel#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

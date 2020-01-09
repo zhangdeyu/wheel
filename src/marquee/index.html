@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #marquee-wrapper {
+      width: 400px;
+      text-align: center;
+      font-size: 20px;
+      height: 30px;
+      overflow: hidden;
+      background: #000;
+      border-radius: 15px;
+      color: #FFF;
+    }
+    .item {
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>跑马灯</h1>
+  <div id="marquee-wrapper">
+    <div class="marquee">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+</body>
+<script src="./marquee.js"></script>
+<script>
+  // 数据准备
+  var lists = (new Array(10).fill('')).reduce(function(arr, item, index) {
+    var item = {
+      mobile: parseInt(Math.random() * (9999 - 1000 + 1) + 1000, 10),
+      amount: (Math.random() * 100).toFixed(2)
+    };
+    arr.push(item)
+    return arr;
+  }, [])
+  var el = document.createElement('div')
+  el.className = 'marquee'
+  el.setAttribute('id', 'marquee')
+  lists.forEach(list => {
+    var item = document.createElement('div')
+    item.className = 'item'
+    item.appendChild(document.createTextNode("手机尾号" + list.mobile + "刚刚领取了" + list.amount + "元"))
+    el.appendChild(item)
+  });
+  document.querySelector('.marquee').replaceWith(el)
+
+  // 调用
+  new Marquee({
+    el: '.marquee',
+    duration: 2,
+  })
+  // 1.准备DOM格式如下 也可以为ul li的格式 marquee负责整体的位移 wrapper负责展示
+  // < div id = "marquee-wrapper" >
+  //       <div class="marquee">
+  //         <div class="item"></div>
+  //         <div class="item"></div>
+  //         <div class="item"></div>
+  //       </div>
+  // </div >
+  // 2.设置marquee-wrapper的高度和item的高度
+  // new Marquee
+</script>
+</html>
