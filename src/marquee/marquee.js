@@ -56,12 +56,12 @@
   }
 
   Marquee.prototype.appendChild = function () {
-    var el = this.container.firstChild;
+    var el = this.container.children[0];
     this.container.appendChild(el.cloneNode(true));
   }
 
   Marquee.prototype.animation = function() {
-    var offset = this.container.firstChild.clientHeight;
+    var offset = this.container.children[0].clientHeight;
     var count = this.container.childNodes.length;
     var index = 0;
     var duration = .5
