@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+    ul, li {
+      list-style: none;
+    }
+    img {
+      width: 480px;
+      height: 270px;
+      display: block;
+    }
+    .wrapper {
+      margin: 30px auto;
+      width: 480px;
+      height: 270px;
+      overflow: hidden;
+    }
+    .item {
+      float: left;
+      font-size: 20px;
+      text-align: center;
+      width: 480px;
+      height: 270px;
+      line-height: 270px;
+    }
+    .text {
+      background: #000;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul id="slides">
+      <li class="item">
+        <img src="https://cn.bing.com/th?id=OHR.MuirWoods_EN-CN4381105570_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+          alt="">
+      </li>
+      <li class="item">
+        <img src="https://cn.bing.com/th?id=OHR.HeavensGate_EN-CN3263449488_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+          alt="">
+      </li>
+      <li class="item">
+        <img src="https://cn.bing.com/th?id=OHR.GalileoMoons_EN-CN9131910460_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+          alt="">
+      </li>
+      <li class="item">
+        <img
+          src="https://cn.bing.com/th?id=OHR.TrakaiLithuania_EN-CN8952767234_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+          alt="">
+      </li>
+      <li class="item">
+        <img
+          src="https://cn.bing.com/th?id=OHR.BurrowingParakeets_EN-CN8248831120_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+          alt="">
+      </li>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <ul id="slides2">
+      <li class="item text">1</li>
+      <li class="item text">2</li>
+      <li class="item text">3</li>
+      <li class="item text">4</li>
+      <li class="item text">5</li>
+    </ul>
+  </div>
+</body>
+<script src="./Slides.js"></script>
+<script>
+  var slides = new Slides();
+  // slides.auto()
+  var slides2 = new Slides({
+    el: '#slides2'
+  });
+</script>
+</html>

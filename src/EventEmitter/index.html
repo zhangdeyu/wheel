@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="./EventEmitter.js"></script>
+<script>
+  var eventEmitter = new EventEmitter();
+
+  function fn(a, b, c) {
+    console.log('fn', a, b, c);
+  }
+
+  function onceFn(a, b, c) {
+    console.log('once fn', a, b, c);
+  }
+
+  function anotherFn(a, b, c) {
+    console.log('another fn', a, b, c);
+  }
+
+  eventEmitter.on('fn', fn)
+  .once('fn', onceFn)
+  .on('fn', anotherFn);
+
+  eventEmitter.emit('fn', [1, 2, 3]);
+</script>
+</html>
