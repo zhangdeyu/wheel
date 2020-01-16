@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *  {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+    .header {
+      height: 30px;
+      background: #CCC;
+      line-height: 30px;
+      text-align: center;
+    }
+    ul, li {
+      list-style: none;
+    }
+    .container li {
+      line-height: 30px;
+      border-bottom: 1px solid #CCC;
+      text-align: center;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">头部</div>
+  <ul class="container">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+  </ul>
+  <div class="footer"></div>
+</body>
+<script src="./pullToRefresh.js"></script>
+<script>
+  var pullToRefresh = new PullToRefresh({
+    el: '.container',
+    distance: 40,
+    text: {
+      pulling: '下拉刷新',
+      releasing: '松开刷新',
+      refreshing: '刷新中...'
+    },
+    onRefresh: function(reset) {
+      setTimeout(() => {
+        
+        reset()
+      }, 3000);
+    }
+  });
+</script>
+</html>

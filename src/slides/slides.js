@@ -1,5 +1,5 @@
 (function(root, factory) {
-  typeof exports === 'object' && typeof module !== undefined ? module.exports = factory()
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory()
   : typeof define === 'function' && define.amd ? define(factory)
   : (global = root || self, global.Slides = factory())
 })(this, function() {
