@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calendar</title>
+  <style>
+    #calendar {
+      width: 390px;
+      border: 2px solid #57abff;
+      padding: 0 4px;
+    }
+    #calendar .selector {
+      display: flex;
+      padding: 10px 6px;
+      border-bottom: 1px solid #57abff;
+    }
+    #calendar .selector .op {
+      display: flex;
+    }
+    #calendar .selector .op span {
+      width: 40px;
+      text-align: center;
+    }
+    #calendar .header {
+      display: flex;
+      align-items: center;
+    }
+
+    #calendar .header .item {
+      height: 34px;
+      line-height: 34px;
+    }
+
+    #calendar .item {
+      width: 55px;
+      height: 54px;
+      text-align: center;
+      line-height: 54px;
+    }
+    #calendar .container .row {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgb(51, 51, 51);
+    }
+    #calendar .container .row .item {
+      color: #bfbfbf;
+    }
+    #calendar .container .row .item.active {
+      color: #000;
+    }
+    #calendar .container .row .item:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+<script src="./Calendar.js"></script>
+<body>
+  <div id="calendar">
+    
+  </div>
+</body>
+<script>
+  var calendar = new Calendar({
+    el: '#calendar'
+  })
+</script>
+</html>
