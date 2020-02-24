@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="input">
+</body>
+<script>
+  function Observe(obj) {
+    if (typeof obj === 'object' && obj !== null) {
+      for(var k in obj) {
+        observer(obj, k);
+      }
+    }
+  }
+
+  function observer(obj, k) {
+    var val = obj[k];
+    Observe(val);
+
+    Object.defineProperty(obj, k, {
+      enumerable: true,
+      configurable: false,
+      get: function Getter() {
+        return val;
+      },
+      set: function Setter(newVal) {
+        if (val !== newVal) {
+          val = newVal;
+          Observe(val);
+        }
+      }
+    })
+  }
+
+  var el = document.querySelector('#input');
+  var obj = {
+    input: 1
+  }
+
+  var val = obj.input;
+  Object.defineProperty(obj, 'input', {
+    get: function Getter() {
+      return val;
+    },
+    set: function Setter(newVal) {
+      if (val === newVal) {
+        return;
+      }
+
+      val = newVal;
+      el.value = val;
+    }
+  })
+
+  el.addEventListener('change', function(e) {
+    obj.input = e.target.value;
+  })
+
+
+</script>
+</html>
